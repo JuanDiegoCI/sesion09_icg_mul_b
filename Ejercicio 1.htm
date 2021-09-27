@@ -22,17 +22,30 @@
 	ctx.clip();
 }
 
+	function circulo(x,y,r, colorBorde, colorRelleno, grosor) { 
+	ctx.beginPath()
+	ctx.strokeStyle = colorBorde
+	ctx.fillStyle = colorRelleno
+	ctx.lineWidth = grosor;
+	ctx.arc(x,y,r,0, Math.PI * 2, true);
+	ctx.stroke();
+	ctx.fill();
+
+}
+
 	var canvas = document.getElementById('canvas')
 	var ctx = canvas.getContext('2d');
 
-	var[azul, verde, rojo] = ['rgba(0,162,232)','rgba(181,230,29)','rgba(237,28,36)']; 
+	var[azul, verde, rojo, blanco] = ['rgba(0,162,232)','rgba(181,230,29)','rgba(237,28,36)','rgba(255,255,255)']; 
 
-	polygon([ 230,40, 105,108, 105,240, 230,308, 358,240, 358,108 ], azul,azul, 2) //figura azul
+	polygon([ 120,98, 165,238, 315,238, 365,98, 240,12 ], azul, azul, 2) //pentagono azul
 
-	polygon([ 66,150, 66,205, 405,206, 405,150 ], verde,verde, 4)//figura verde
+	polygon([ 215,50, 292,106, 262,196, 168,196, 140,106 ], blanco, blanco, 2) //pentagono blanco
 
-	polygon([ 120,25, 120,288, 240,288 ], rojo,rojo, 2)//figura roja
+	polygon([ 34,98, 30,128, 365,188, 368,155 ], verde, verde, 4)//rectangulo verde
+
+	circulo(130,108,86, rojo, rojo, 2)//circulo rojo
 	
-
+	circulo(148,110,54, blanco, blanco, 2)//circulo blanco
 
 </script>
