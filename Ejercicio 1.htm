@@ -1,0 +1,38 @@
+<canvas id='canvas' width=800 height=600>
+<script>
+	
+	function polygon(a, colorBorde, colorRelleno, grosor) { 
+	ctx.beginPath()
+	ctx.strokeStyle = colorBorde
+	ctx.fillStyle = colorRelleno
+	ctx.lineWidth = grosor;
+	ctx.moveTo(a[0],a[1])
+	for (i=2; i < a.length; i+=2)
+	ctx.lineTo(a[i],a[i+1]);
+	ctx.closePath()
+	ctx.stroke()
+	ctx.fill()
+}
+
+	function recorte(a){
+	ctx.beginPath();
+	ctx.moveTo(a[0],a[1])
+	for (i=2; i < a.length; i+=2)
+	ctx.lineTo(a[i],a[i+1]);	
+	ctx.clip();
+}
+
+	var canvas = document.getElementById('canvas')
+	var ctx = canvas.getContext('2d');
+
+	var[azul, verde, rojo] = ['rgba(0,162,232)','rgba(181,230,29)','rgba(237,28,36)']; 
+
+	polygon([ 230,40, 105,108, 105,240, 230,308, 358,240, 358,108 ], azul,azul, 2) //figura azul
+
+	polygon([ 66,150, 66,205, 405,206, 405,150 ], verde,verde, 4)//figura verde
+
+	polygon([ 120,25, 120,288, 240,288 ], rojo,rojo, 2)//figura roja
+	
+
+
+</script>
