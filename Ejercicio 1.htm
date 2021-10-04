@@ -22,6 +22,12 @@
 	ctx.clip();
 }
 
+	function recortec(x,y,r){
+	ctx.beginPath();
+	ctx.arc(x,y,r,0, Math.PI * 2);	
+	ctx.clip();
+}
+
 	function circulo(x,y,r, colorBorde, colorRelleno, grosor) { 
 	ctx.beginPath()
 	ctx.strokeStyle = colorBorde
@@ -47,5 +53,13 @@
 	circulo(130,108,86, rojo, rojo, 2)//circulo rojo
 	
 	circulo(148,110,54, blanco, blanco, 2)//circulo blanco
+
+	recortec(148,110,54);
+
+	polygon([ 120,98, 165,238, 315,238, 365,98, 240,12 ], azul, azul, 2) //pentagono azul
+
+	polygon([ 215,50, 292,106, 262,196, 168,196, 140,106 ], blanco, blanco, 2) //pentagono blanco
+
+	polygon([ 34,98, 30,128, 365,188, 368,155 ], verde, verde, 4)//rectangulo verde
 
 </script>
